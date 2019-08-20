@@ -1,0 +1,32 @@
+body {
+	background: url(Circuit.jpg);
+	background-size: cover;
+	font-family: "Lato";
+	color: white;
+}
+#menu {
+    font-weight: 400;
+    font-size: 18px;     
+}
+#menu .nav-link {
+    color: white;
+    margin-right: 15px;
+}
+#menu .nav-link:hover {
+    color: #FFCD00;
+}
+#menu .navbar-brand {
+    color: #FFCD00;
+    font-size: 20px;
+}
+.navbar.scrolled {
+    background: #004846;
+    transition: background 500ms;
+}
+header {
+    font-size: 4rem;
+    background-color: rgba(0,0,0,0.3);
+    margin-top: 25px;
+    margin: 0 auto;
+    width: 35%;
+}
