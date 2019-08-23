@@ -1,0 +1,98 @@
+body {
+	background: url(../img/Circuit.jpg);
+	background-size: cover;
+	font-family: "Lato";
+	color: white;
+}
+header {
+    font-size: 4rem;
+    background-color: rgba(0,0,0,0.3);
+    margin-top: 25px;
+    margin: 0 auto;
+    width: 35%;
+}
+strong {
+    font-size: 1.25rem;
+}
+td {
+    border: 1px solid white;
+    width: 80px;
+    padding-left: 5px;
+}
+footer hr {
+	width: 300px;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+@media (max-width: 800px) {
+    header {
+        font-size: 3rem;
+    }
+}
+@media (max-width: 600px) {
+    article {
+        font-size: 1rem;
+    }
+    footer {
+    	text-align: center;
+    }
+    footer hr {
+    	align-self: center;
+    }
+}
+#menu {
+    font-weight: 400;
+    font-size: 18px;     
+}
+#menu .nav-link {
+    color: white;
+    margin-right: 15px;
+}
+#menu .nav-link:hover {
+    color: #FFCD00;
+}
+#menu .navbar-brand {
+    color: #FFCD00;
+    font-size: 20px;
+}
+.navbar.scrolled {
+    background: #004240;
+    transition: background 500ms;
+}
+.Inicio {
+    margin: 0 auto;
+    font-size: 0.8rem;
+    line-height: 5px;
+    background-color: rgba(0,0,0,0.3);
+}
+.Referencias {
+    margin: auto;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    background-color: rgba(0,0,0,0.3);
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.Contenido {
+    background-color: rgba(0,0,0,0.5);
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.Bibliografia {
+    text-decoration: underline;
+}
+.Diferencias {
+    border: 1px solid white;
+    width: 700px;
+    padding-left: 5px;
+}
+#Semejanzas {
+    text-align: center;
+}
+#Jumbo {
+    background: url(../img/Chip.jpg);
+}

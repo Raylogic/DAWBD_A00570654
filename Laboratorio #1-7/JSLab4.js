@@ -1,57 +1,112 @@
-function contar_numero(arr = [1, -9, 5, 3, 4, -7, 2, -6, 0, 8]) {
-	var positivo = 0;
-	var negativo = 0;
+
+function tabla_potencia() {
+	var num = prompt("Número = ");
+	document.write("<table border='1'");
+	document.write("<thead>");
+	document.write("<th>Número</th> <th>Cuadrados</th> <th>Cubos</th>");
+	document.write("</thead>");
+
+	for(var i = 1; i <= num; i++) {
+		document.write("<tr>");
+		document.write("<td>"+i+"</td> <td>"+Math.pow(i,2)+"</td> <td>"+Math.pow(i,3)+"</td>");
+		document.write("</tr>");
+	}
+	document.write("</table>");
+}
+
+//-----------------------------------------------------------------------------------------------------
+
+function suma_random() {
+	var tiempo_inicio = performance.now();
+	var aproximacion = prompt("Suma = ");
+	var tiempo_final = performance.now();
+	var tiempo_entre = ((tiempo_final - tiempo_inicio)/1000).toFixed(2);
+
+	var num1 = Math.floor(Math.random()*10);
+	var num2 = Math.floor(Math.random()*10);
+	var suma = num1 + num2;
+	
+	if(aproximacion !== suma) {
+		document.write("No le adivinó" + "<br>");
+	} else {
+		document.write("Eres psíquico" + "<br>");
+	}
+	document.write("Resultado verdadero = " + suma + "<br>");
+	document.write("Tardaste " + tiempo_entre + " segundos en responder." + "<br>");
+}
+
+//----------------------------------------------------------------------------------
+
+function contar_numeros() {
+	var arr = [];
+	for(var i = 0; i < 20; i++) {
+	    arr[i] = Math.floor(Math.random()*20 - 10);
+	    document.write(arr[i] + ", ");
+	}
+	var positivos = 0;
+	var negativos = 0;
 	var ceros = 0;
-	for(x=0; x<arr.length; x++) {
-		if(arr[x] > 0) {
-			positivo++;
-		} else if (arr[x] == 0) {
+	for(i = 0; i < arr.length; i++) {
+		if(arr[i] > 0) {
+			positivos++;
+		} else if (arr[i] == 0) {
 			ceros++;
-		} else if (arr[x] < 0) {
-			negativo++;
+		} else if (arr[i] < 0) {
+			negativos++;
 		}
 	}
-	return "Positivos = " + positivo + " Ceros = " + ceros + " Negativos = " + negativo;
+	document.write("<br> Positivos = " + positivos + "<br>Ceros = " + ceros + "<br>Negativos = " + negativos);
 }
-var str = contar_numero;
-document.write(str());
+
+//------------------------------------------------------
 
 function promedio_matriz() {
-	var matrix = [];
+	var matriz = [];
 	var suma = 0;
 	var filas = 9;
 	var columnas = 9;
 	for(var i=0; i<filas; i++) {
-	    matrix[i] = [];
+	    matriz[i] = [];
 	    for(var j=0; j<columnas; j++) {
-	        matrix[i][j] = Math.floor(Math.random()*10);;
-	        suma = suma + matrix[i][j];
+	        matriz[i][j] = Math.floor(Math.random()*10);
+	        document.write(matriz[i][j] + ", ")
+	        suma = suma + matriz[i][j];
 	    }
+	    document.write("<br>");
 	}
 	var promedio = suma/(filas*columnas);
-	return "Promedio = " + promedio;
+	document.write("<br>Promedio = " + promedio.toFixed(2));
 }
-var prom = promedio_matriz;
-document.write(prom());
 
+//---------------------------------------------------------
 
-
-function invertir_numero(num) {
+function invertir_numero() {
+	var num = prompt("Número a invertir = ")
 	num = num + "";
-	return num.split("").reverse().join("");
+	document.write(num.split("").reverse().join(""));
 }
-var inversion = invertir_numero;
-document.write(inversion(12345));
 
-console.log(reverse_a_number(32243));
+//----------------------------------------------------------
 
-function binario(num) {
-	var resultado = [];
-	for(var i=0; num>=1; ++i) {
-        resultado[i] = num % 2;
+function binario_paridad() {
+	var num = Math.floor(Math.random()*1024)
+	document.write("Número = " + num);
+	var arr = new Array(15);
+	for(var i = 0; num>=1; ++i) {
+        arr[i] = num % 2;
         num = Math.floor(num/2);
     }
-    return "Binario = " + resultado.reverse().join("");
+    document.write("<br>Binario = " + arr.reverse().join(""));
+
+    var count1s = 0;
+    for(var j = 0; j<arr.length; j++){
+    	if(arr[j] == 1){
+    		count1s++;
+    	}
+    }
+    if(count1s % 2 == 0) {
+    	document.write("<br>Paridad par");
+    } else if(count1s % 2 == 1) {
+		document.write("<br>Paridad impar");
+    }
 }
-var b = binario;
-document.write(binario(240));
