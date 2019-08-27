@@ -71,10 +71,10 @@ function promedio_matriz() {
 	        document.write(matriz[i][j] + ", ")
 	        suma = suma + matriz[i][j];
 	    }
-	    document.write("<br>");
+	    var promedio = suma/columnas;
+		document.write("<br>Promedio = " + promedio.toFixed(2) + "<br><br>");
+		suma = 0;
 	}
-	var promedio = suma/(filas*columnas);
-	document.write("<br>Promedio = " + promedio.toFixed(2));
 }
 
 //---------------------------------------------------------
