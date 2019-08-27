@@ -99,3 +99,9 @@ footer hr {
 #Intro {
     font-size: 1.2rem;
 }
+#Field {
+    margin-left: 20px;
+}
+input[name="Cantidad"] {
+    width: 60px;
+}

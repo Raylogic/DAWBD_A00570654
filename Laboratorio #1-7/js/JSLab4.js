@@ -17,21 +17,20 @@ function tabla_potencia() {
 //-----------------------------------------------------------------------------------------------------
 
 function suma_random() {
+	var num1 = Math.floor(Math.random()*100);
+	var num2 = Math.floor(Math.random()*100);
+	var suma = num1 + num2;
+	
 	var tiempo_inicio = performance.now();
-	var aproximacion = prompt("Suma = ");
+	var operacion = prompt("" + num1 + " + " + num2 + " = ");
 	var tiempo_final = performance.now();
 	var tiempo_entre = ((tiempo_final - tiempo_inicio)/1000).toFixed(2);
 
-	var num1 = Math.floor(Math.random()*10);
-	var num2 = Math.floor(Math.random()*10);
-	var suma = num1 + num2;
-	
-	if(aproximacion !== suma) {
-		document.write("No le adivinó" + "<br>");
+	if(operacion == suma) {
+		document.write("¡Correcto!" + "<br>");
 	} else {
-		document.write("Eres psíquico" + "<br>");
+		document.write("¡Incorrecto!" + "<br>");
 	}
-	document.write("Resultado verdadero = " + suma + "<br>");
 	document.write("Tardaste " + tiempo_entre + " segundos en responder." + "<br>");
 }
 
@@ -88,25 +87,43 @@ function invertir_numero() {
 
 //----------------------------------------------------------
 
-function binario_paridad() {
-	var num = Math.floor(Math.random()*1024)
-	document.write("Número = " + num);
-	var arr = new Array(15);
-	for(var i = 0; num>=1; ++i) {
-        arr[i] = num % 2;
-        num = Math.floor(num/2);
-    }
-    document.write("<br>Binario = " + arr.reverse().join(""));
+class Numero {
 
-    var count1s = 0;
-    for(var j = 0; j<arr.length; j++){
-    	if(arr[j] == 1){
-    		count1s++;
+	constructor(numero){
+		this.numero = numero;
+	}
+
+	binario(){
+		var arr = new Array(15);
+		for(var i = 0; this.numero>=1; ++i) {
+        	arr[i] = this.numero % 2;
+        	this.numero = Math.floor(this.numero/2);
     	}
-    }
-    if(count1s % 2 == 0) {
-    	document.write("<br>Paridad par");
-    } else if(count1s % 2 == 1) {
-		document.write("<br>Paridad impar");
-    }
+   		document.write("<br>Binario = " + arr.reverse().join(""));
+	}
+	primo(){
+		var primo = true;
+		for(var i = 1; i<=this.numero; i++){
+			if(this.numero % i == 0){
+				primo = false;
+				break;
+			} 
+		}
+		if(primo == true){
+			document.write("<br>Es un número primo");
+		} else {
+			document.write("<br>No es un número primo");
+		}
+	}		
+}
+
+function analisis_numero(){
+	var num = new Numero(Math.floor(Math.random()*1024));
+	document.write("Número = " + num.numero);
+
+	num.primo();
+	num.binario();
+	
+
+	document.write('<br><br><a href="Laboratorio4.html">Laboratorio #4</a>');
 }
