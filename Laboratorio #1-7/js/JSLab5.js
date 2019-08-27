@@ -6,7 +6,7 @@ function xbox() {
       "<li>Incluye dos controles</li>" +
       "<li>Incluye Halo: Infinte</li>" +
       "<li>Incluye Xbox Game Pass</li>" +
-      "<li>Precio = $" + precio +
+      "<li>Precio = $" + "<span id=PrecioXbox>" + precio + "</span>" +
     "</ul>"
   "";
 }
@@ -18,7 +18,7 @@ function playstation() {
       "<li>Incluye un control</li>" +
       "<li>Incluye Borderlands 3</li>" +
       "<li>Incluye PlayStation Now</li>" +
-      "<li>Precio = $" + precio +
+      "<li>Precio = $" + "<span id=PrecioPS>" + precio + "</span>" +
     "</ul>"
   "";
 }
@@ -30,19 +30,22 @@ function nintendo() {
       "<li>Incluye dos joycons</li>" +
       "<li>Incluye Mario Odyssey</li>" +
       "<li>Incluye Nintendo Online</li>" +
-      "<li>Precio = $" + precio +
+      "<li>Precio = $" + "<span id=PrecioNX>" + precio + "</span>" +
     "</ul>"
   "";
 }
 function total(){
-  var amountXbox = document.getElementById("AmountXbox").value;
-  var discountXbox = document.getElementById("DiscountXbox").value;
-  var amountPS = document.getElementById("AmountPS").value;
-  var discountPS = document.getElementById("DiscountPS").value;
-  var amountNin = document.getElementById("AmountNX").value;
-  var discountNin = document.getElementById("DiscountNX").value;
+  var amountXbox = document.getElementById("AmountXbox");
+  var discountXbox = document.getElementById("DiscountXbox");
+  var precioXbox = document.getElementById("PrecioXbox");
+  var amountPS = document.getElementById("AmountPS");
+  var discountPS = document.getElementById("DiscountPS");
+  var precioPS = document.getElementById("PrecioPS");
+  var amountNin = document.getElementById("AmountNX");
+  var discountNin = document.getElementById("DiscountNX");
+  var precioNin = document.getElementById("PrecioNX");
   var IVA = 0.16;
-  var total = (amountXbox*(1-discountXbox/100) + amountPS*(1-discountPS/100) + amountNin*(1-discountNin/100))*(1+IVA);
+  var total = (precioXbox*(1-discountXbox/100)*amountXbox + precioPS*(1-discountPS/100)*amountPS + precioNin*(1-discountNin/100)*amountNin)*(1+IVA);
   document.getElementById("Total").innerHTML = 
     "<h2>" + "Total = $" + total + "</h2>"
   "";
