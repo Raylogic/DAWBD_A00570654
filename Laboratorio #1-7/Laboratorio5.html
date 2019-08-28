@@ -51,16 +51,14 @@
                                 <li>Para mantener la integridad y consistencia de los datos, así como evitar errores de usuario. Se recomienda que el sistema le especifique al usuario cómo espera recibir la información.</li>
                             </ul>
                         </p>
-                        <p><strong>2) ¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript? (1)</strong><br>
+                        <p><strong>2) ¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript? </strong><br>
                             <ul>
-                                <li>Usando atributos de validación proporcionados por HTML5 (Ej. required, invalid, minlength, maxlength, pattern, etc...).</li>
+                                <li>Inspecciona el HTML y desactiva las funcionalidades de Javascript manualmente</li>
                             </ul>
                         </p>
-                        <p><strong>3) Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica? (1)</strong><br>
+                        <p><strong>3) Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</strong><br>
                             <ul>
-                                <li>Javascript ofrece más herramientas de validación que HTML5</li>
-                                <li>Javascript permite generar mensajes de error personalizados</li>
-                                <li>Los atributos de validación de HTML5 no funcionan en todos los navegadores</li>
+                                <li>Para poder validar los datos que el usuario ingresa con la base de datos conectada</li>
                             </ul>
                         </p>
                     </article>
@@ -131,96 +129,64 @@
                     <div class="text-white col-6 col-lg-6 mt-3">
                         <div class="text-white" id="Total">
                             <button type="button" class="btn btn-secondary" onclick="total()">Monto final</button>
+
                         </div>
                     </div>  
                 </div>
             </div>
         </div>
     </section>
-
     <form>
         <section class="container-fluid px-0">
             <div class="row align-items-center">
-                <div class="col-8 mb-4">
+                <div class="col-6 mb-4">
                     <div class="row justify-content-center">
                         <div class="form-row text-white">
-                            <div class="col-md-4 mb-3">
-                              <label for="validationDefault01">Nombre</label>
-                              <input type="text" class="form-control" id="validationDefault01" placeholder="Nombre" value="Nombre" required>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                              <label for="validationDefault02">Apellido</label>
-                              <input type="text" class="form-control" id="validationDefault02" placeholder="Apellido" value="Apellido" required>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                              <label for="validationDefault0X">Matrícula</label>
-                              <input type="text" class="form-control" id="validationDefault0X" placeholder="Matrícula" value="Matrícula" required>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                              <label for="validationDefaultUsername">Mail</label>
-                              <div class="input-group">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                            <div class="col-8 col-lg-10">
+                                <h2 id="Registro">Rellena el formulario</h2>
+
+                                <label for="Nombre">Nombre</label>
+                                <input type="text" class="form-control" id="Nombre" placeholder="Nombre" value="Raymundo" required>
+
+                                <label for="Apellido">Apellido</label>
+                                <input type="text" class="form-control" id="Apellido" placeholder="Apellido" value="Romero Arenas" required>
+
+                                <label for="Matrícula">Matrícula</label>
+                                <input type="text" class="form-control" id="Matrícula" placeholder="Matrícula" value="A00570654" required>
+
+                                <label for="Mail">Mail</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="Arroba">@</span>
+                                    </div>
+                                    <input type="Email" class="form-control" id="Mail" placeholder="A00570654@itesm.mx" required>
                                 </div>
-                                <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Mail" aria-describedby="inputGroupPrepend2" required>
-                              </div>
-                            </div>
-                          </div>
 
-                          <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                              <label for="validationDefault03">City</label>
-                              <input type="text" class="form-control" id="validationDefault03" placeholder="City" required>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                              <label for="validationDefault04">State</label>
-                              <input type="text" class="form-control" id="validationDefault04" placeholder="State" required>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                              <label for="validationDefault05">Zip</label>
-                              <input type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
-                            </div>
-                          </div>
-                          <br>
-                          <div class="form-group">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                              <label class="form-check-label" for="invalidCheck2">
-                                Agree to terms and conditions
-                              </label>
-                            </div>
-                          </div>
+                                <label for="Password">Contraseña</label>
+                                <input id="password" type="Password" placeholder="X-ray1257" class="form-control" pattern=".{8,15}" required title="La contraseña debe tener 8-15 caracteres">
+                                <small id="Ayuda" class="form-text text-muted">
+                                    La contraseña debe tener 8-15 caracteres y contener letras y números.
+                                </small>
+                                
+                                <label for="Password">Verificar contraseña</label>
+                                <input id="verify" type="Password" placeholder="X-ray1257" class="form-control" pattern=".{8,15}"required title="La contraseña debe tener 8-15 caracteres">
+                                <small id="Ayuda" class="form-text text-muted">
+                                    La contraseña debe tener 8-15 caracteres y contener letras y números.
+                                </small>
 
-                        <div class="text-white col-8 col-lg-8 mt-3">
-                            <label for="Password" class="text-white">Contraseña</label>
-                            <input id="password" type="Password" placeholder="Contraseña" class="form-control" aria-describedby="Ayuda" minlength="8" maxlength="15" required title="Password needs to have 8-15 characters">
-                            <small id="Ayuda" class="form-text text-muted">
-                                La contraseña debe tener 8-15 caracteres y contener letras y números.
-                            </small>
-                            
-                            <label for="Password" class="text-white">Verificar contraseña</label>
-                            <input id="verify" type="Password" placeholder="Contraseña" class="form-control" aria-describedby="Ayuda"  minlength="8" maxlength="15" required title="Password needs to have 8-15 characters">
-                            <small id="Ayuda" class="form-text text-muted">
-                                La contraseña debe tener 8-15 caracteres y contener letras y números.
-                            </small>
+                                <label for="Agreed">Acepto los términos y condiciones </label>
+                                <input id="Agreed" type="Checkbox" name="Agreed">
+                                <br>
+                                <input type="Submit" id="Enviar" onclick="terminar_compra()" disabled>
+                                <br>
+                                <div id="Endgame"></div>
+                            </div>
                         </div>  
                     </div>
                 </div>
             </div>
         </section>
-        <section>
-            <div class="row align-items-center">
-                <div class="col-6 mb-4 order-2">
-                    <div class="row justify-content-center">
-                        <div class="text-white col-6 col-lg-8 mt-3">
-                        <div>
-                            <input type="Submit" onclick="total()">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    <form>
+    </form>
     
     <section class="container-fluid px-0">
         <div class="row align-items-center">

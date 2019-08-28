@@ -105,3 +105,15 @@ footer hr {
 input[name="Cantidad"] {
     width: 60px;
 }
+label {
+    margin-top: 15px;
+}
+#Agreed {
+    margin-left: 10px;
+}
+#Enviar {
+    margin-top: 10px;
+}
+#Endgame {
+    margin-top: 15px;
+}
