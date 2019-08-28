@@ -37,66 +37,53 @@ function nintendo() {
 function total(){
   var amountXbox = document.getElementById("AmountXbox").value;
   var discountXbox = document.getElementById("DiscountXbox").value;
-  var precioXbox = document.getElementById("PrecioXbox");
+  var precioXbox = document.getElementById("PrecioXbox").innerHTML;
   var amountPS = document.getElementById("AmountPS").value;
   var discountPS = document.getElementById("DiscountPS").value;
-  var precioPS = document.getElementById("PrecioPS");
+  var precioPS = document.getElementById("PrecioPS").innerHTML;
   var amountNin = document.getElementById("AmountNX").value;
   var discountNin = document.getElementById("DiscountNX").value;
-  var precioNin = document.getElementById("PrecioNX");
+  var precioNin = document.getElementById("PrecioNX").innerHTML;
   var IVA = 0.16;
-  var total = (precioXbox*(1-discountXbox/100)*amountXbox + precioPS*(1-discountPS/100)*amountPS + precioNin*(1-discountNin/100)*amountNin)*(1+IVA);
-  console.log(precioXbox);
+  var totalXbox = precioXbox*amountXbox*(1-(discountXbox/100));
+  var totalPS = precioPS*amountPS*(1-(discountPS/100));
+  var totalNin = precioNin*amountNin*(1-(discountNin/100));
+  var total = (totalXbox + totalPS + totalNin)*(1+IVA);
+  console.log(totalXbox);
 
   document.getElementById("Total").innerHTML = 
-    "<h2>" + "Total = $" + total + "</h2>"
+    "<h2>" + "Total = $" + total + "</h2>" + 
   "";
 }
 
-
-
-
-
-function evaluarContraseñas() {
-    var contrasenia;
-    var contraseniaConfirm;
-    var tamanio = false;
-    var numeros = false;
-    var letras = false;
-    var caracteres = false;
-    var aceptada = 0;
-    let aceptadaVal = false;
+function validarContraseña() {
+    var contrasena = document.getElementById("Contrasena").value;
+    var verificacion = document.getElementById("Verify").value;
+    var tamano = false;
+    var numero = false;
+    var letra = false;
+    var especial = false;
+    var valido = false;
     
-    document.getElementById("con1").value;
+    document.getElementById("Contrasena").value;
     
-    contrasenia = document.getElementById("con1").value;
-    contraseniaConfirm = document.getElementById("con2").value;
-
-    
-    if(contrasenia.length==0){
-        tamanio=false;
-  
-    }if(contrasenia.length >= 8){
-        tamanio=true;
-        aceptada++;
-
-    }if(contrasenia.match(/[0-9]/)){
-        numeros=true;
-        aceptada++;
-
-    }if(contrasenia.match(/[a-z]/)){
-        letras=true;
-        aceptada++;
-
-    }if(contrasenia.match(/[!#$%*&.]/)){
-        caracteres = true;
-        aceptada++;
+    if(contrasena.length >= 8){
+      tamano = true;
     }
-    if(aceptada == 4){
-        aceptadaVal = true;
+    if(contrasenia.match(/[0-9]/)){
+      numero = true;
+    }
+    if(contrasenia.match(/[a-z]/)){
+      letra = true;
+    }
+    if(contrasenia.match(/[!#$%*&.]/)){
+      especial = true;
+    }
+    if(tamano == true && numero == true && letra == true && especial == true){
+      valido = true;
     }
     
-    if(contrasenia == contraseniaConfirm && aceptadaVal == false){
+    if(contrasena == verificacion && aceptadaVal == false){
         document.getElementById("feedback").innerHTML = "La contraseña no cumple los requisitos";
         
     }else if(contrasenia == contraseniaConfirm && aceptadaVal == true){

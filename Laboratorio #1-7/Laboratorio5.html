@@ -129,7 +129,6 @@
                     <div class="text-white col-6 col-lg-6 mt-3">
                         <div class="text-white" id="Total">
                             <button type="button" class="btn btn-secondary" onclick="total()">Monto final</button>
-
                         </div>
                     </div>  
                 </div>
@@ -146,13 +145,16 @@
                                 <h2 id="Registro">Rellena el formulario</h2>
 
                                 <label for="Nombre">Nombre</label>
-                                <input type="text" class="form-control" id="Nombre" placeholder="Nombre" value="Raymundo" required>
+                                <input type="text" class="form-control is-valid" id="Nombre" placeholder="Raymundo" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
 
                                 <label for="Apellido">Apellido</label>
-                                <input type="text" class="form-control" id="Apellido" placeholder="Apellido" value="Romero Arenas" required>
+                                <input type="text" class="form-control" id="Apellido" placeholder="Romero Arenas" required>
 
                                 <label for="Matrícula">Matrícula</label>
-                                <input type="text" class="form-control" id="Matrícula" placeholder="Matrícula" value="A00570654" required>
+                                <input type="text" class="form-control" id="Matrícula" placeholder="A00570654" required>
 
                                 <label for="Mail">Mail</label>
                                 <div class="input-group">
@@ -163,13 +165,13 @@
                                 </div>
 
                                 <label for="Password">Contraseña</label>
-                                <input id="password" type="Password" placeholder="X-ray1257" class="form-control" pattern=".{8,15}" required title="La contraseña debe tener 8-15 caracteres">
+                                <input id="Contrasena" type="Password" placeholder="X-ray1257" class="form-control" pattern=".{8,15}" required title="La contraseña debe tener 8-15 caracteres">
                                 <small id="Ayuda" class="form-text text-muted">
                                     La contraseña debe tener 8-15 caracteres y contener letras y números.
                                 </small>
                                 
                                 <label for="Password">Verificar contraseña</label>
-                                <input id="verify" type="Password" placeholder="X-ray1257" class="form-control" pattern=".{8,15}"required title="La contraseña debe tener 8-15 caracteres">
+                                <input id="Verify" type="Password" placeholder="X-ray1257" class="form-control" pattern=".{8,15}"required title="La contraseña debe tener 8-15 caracteres">
                                 <small id="Ayuda" class="form-text text-muted">
                                     La contraseña debe tener 8-15 caracteres y contener letras y números.
                                 </small>
@@ -177,7 +179,7 @@
                                 <label for="Agreed">Acepto los términos y condiciones </label>
                                 <input id="Agreed" type="Checkbox" name="Agreed">
                                 <br>
-                                <input type="Submit" id="Enviar" onclick="terminar_compra()" disabled>
+                                <input type="Submit" id="Enviar" onclick="terminar_compra()" >
                                 <br>
                                 <div id="Endgame"></div>
                             </div>
