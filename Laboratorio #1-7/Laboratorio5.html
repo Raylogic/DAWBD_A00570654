@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Laboratorio #3</title>
+	<title>Laboratorio #5</title>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,11 +16,12 @@
 <body>
     <section id="Jumbo" class="jumbotron text-center">
         <div class="text-white text-center mt-5">
-            <header>Laboratorio #7</header> 
-            <p class="lead"><strong>Tecnológico de Monterrey: Cultura emprendedora</strong></p>
-            <a href="Inicio.html" class="btn btn-primary">Inicio</a>
-            <a href="https://getbootstrap.com/" class="btn btn-warning">Bootstrap</a>
-    </div>
+            <header>Laboratorio #5</header> 
+            <p id="LabDescrip"><strong>Este laboratorio engloba las tres actividades solicitadas:</strong></p>
+            <p id="LabDescrip"><strong>1) Tienda de productos</strong></p>
+            <p id="LabDescrip"><strong>2) Validación de contraseñas</strong></p>
+            <p id="LabDescrip"><strong>3) Ejercicio libre - Formulario</strong></p>
+        </div>
     </section>
     <!-- Navbar -->
     <nav id="menu" class="navbar navbar-dark bg-dark navbar-expand-md py-0 fixed-top">
@@ -35,6 +36,7 @@
                 <li class="nav-item"><a href="Laboratorio3.html" class="nav-link">Laboratorio #3</a></li>
                 <li class="nav-item"><a href="Cuestionario1.html" class="nav-link">Cuestionario #1</a></li>
                 <li class="nav-item"><a href="Laboratorio4.html" class="nav-link">Laboratorio #4</a></li>
+                <li class="nav-item"><a href="Laboratorio5.html" class="nav-link">Laboratorio #5</a></li>
                 <li class="nav-item"><a href="Laboratorio7.html" class="nav-link">Laboratorio #7</a></li>
             </ul>
         </div>
@@ -74,7 +76,7 @@
                     <div class="card">
                         <img class="card-img-top" src="img/Xbox.jpg" alt="">
                         <div class="card-body bg-dark">
-                            <h5 class="card-title text-white">Xbox One X</h5>
+                            <h5 class="card-title text-white">Xbox One X - $<span id="PrecioXbox">5000</span></h5></h5>
                             <div class="text-white" id="Xbox"></div>
                             <button type="button" class="btn btn-secondary" onclick="xbox()">Más información</button>
                             <br><br>
@@ -90,7 +92,7 @@
                     <div class="card">
                         <img class="card-img-top" src="img/PS4.jpg" alt="">
                         <div class="card-body bg-dark">
-                            <h5 class="card-title text-white">Playstation 4</h5>
+                            <h5 class="card-title text-white">Playstation 4 - $<span id="PrecioPS">7500</span></h5>
                             <div class="text-white" id="Playstation"></div>
                             <button type="button" class="btn btn-secondary" onclick="playstation()">Más información</button>
                             <br><br>
@@ -106,7 +108,7 @@
                     <div class="card">
                         <img class="card-img-top" src="img/Nintendo.jpg" alt="">
                         <div class="card-body bg-dark">
-                            <h5 class="card-title text-white">Nintendo Switch</h5>
+                            <h5 class="card-title text-white">Nintendo Switch - $<span id="PrecioNX">6000</span></h5></h5>
                             <div class="text-white" id="Nintendo"></div>
                             <button type="button" class="btn btn-secondary" onclick="nintendo()">Más información</button>
                             <br><br>
@@ -124,11 +126,12 @@
 
     <section class="container-fluid px-0">
         <div class="row align-items-center">
-            <div class="col-4 mb-4">
+            <div class="col-6 mb-4">
                 <div class="row justify-content-center">
-                    <div class="text-white col-6 col-lg-6 mt-3">
-                        <div class="text-white" id="Total">
+                    <div class="text-white mt-3">
+                        <div class="text-white">
                             <button type="button" class="btn btn-secondary" onclick="total()">Monto final</button>
+                            <h3 id="Total"></h3>
                         </div>
                     </div>  
                 </div>
@@ -138,48 +141,57 @@
     <form>
         <section class="container-fluid px-0">
             <div class="row align-items-center">
-                <div class="col-6 mb-4">
+                <div class="col-7 mb-4">
                     <div class="row justify-content-center">
                         <div class="form-row text-white">
-                            <div class="col-8 col-lg-10">
+                            <div class="col-6 col-lg-8">
                                 <h2 id="Registro">Rellena el formulario</h2>
 
                                 <label for="Nombre">Nombre</label>
                                 <input type="text" class="form-control is-valid" id="Nombre" placeholder="Raymundo" required>
                                 <div class="valid-feedback">
-                                    Looks good!
+                                    Puedes poner nombres inventados
                                 </div>
 
                                 <label for="Apellido">Apellido</label>
-                                <input type="text" class="form-control" id="Apellido" placeholder="Romero Arenas" required>
+                                <input type="text" class="form-control is-valid" id="Apellido" placeholder="Romero Arenas" required>
+                                <div class="valid-feedback">
+                                    !Los apellidos extraños son lo máximo!
+                                </div>
 
                                 <label for="Matrícula">Matrícula</label>
-                                <input type="text" class="form-control" id="Matrícula" placeholder="A00570654" required>
+                                <input type="text" class="form-control is-valid" id="Matrícula" placeholder="A00570654" required>
+                                <div class="valid-feedback">
+                                    En Campus León la matrícula va ahora en A00573XXX
+                                </div>
 
                                 <label for="Mail">Mail</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="Arroba">@</span>
                                     </div>
-                                    <input type="Email" class="form-control" id="Mail" placeholder="A00570654@itesm.mx" required>
+                                    <input type="Email" class="form-control is-valid" id="Mail" placeholder="A00570654@itesm.mx" required>
+                                    <div class="valid-feedback">
+                                        No lo usaremos para robarte tus datos
+                                    </div>
                                 </div>
 
                                 <label for="Password">Contraseña</label>
                                 <input id="Contrasena" type="Password" placeholder="X-ray1257" class="form-control" pattern=".{8,15}" required title="La contraseña debe tener 8-15 caracteres">
-                                <small id="Ayuda" class="form-text text-muted">
-                                    La contraseña debe tener 8-15 caracteres y contener letras y números.
+                                <small id="AyudaPassword" class="form-text text-muted">
+                                    La contraseña debe tener 8-15 caracteres y contener letras, números y caracteres especiales.
                                 </small>
                                 
                                 <label for="Password">Verificar contraseña</label>
                                 <input id="Verify" type="Password" placeholder="X-ray1257" class="form-control" pattern=".{8,15}"required title="La contraseña debe tener 8-15 caracteres">
-                                <small id="Ayuda" class="form-text text-muted">
-                                    La contraseña debe tener 8-15 caracteres y contener letras y números.
+                                <small id="AyudaVerify" class="form-text text-muted">
+                                    La contraseña debe tener 8-15 caracteres y contener letras, números y caracteres especiales.
                                 </small>
 
                                 <label for="Agreed">Acepto los términos y condiciones </label>
                                 <input id="Agreed" type="Checkbox" name="Agreed">
                                 <br>
-                                <input type="Submit" id="Enviar" onclick="terminar_compra()" >
+                                <input type="Submit" id="Enviar" onclick="terminar_compra()" disabled>
                                 <br>
                                 <div id="Endgame"></div>
                             </div>

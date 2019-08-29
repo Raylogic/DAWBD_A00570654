@@ -6,7 +6,6 @@ function xbox() {
       "<li>Incluye dos controles</li>" +
       "<li>Incluye Halo: Infinte</li>" +
       "<li>Incluye Xbox Game Pass</li>" +
-      "<li>Precio = $" + "<span id=PrecioXbox>" + precio + "</span>" +
     "</ul>"
   "";
 }
@@ -18,7 +17,6 @@ function playstation() {
       "<li>Incluye un control</li>" +
       "<li>Incluye Borderlands 3</li>" +
       "<li>Incluye PlayStation Now</li>" +
-      "<li>Precio = $" + "<span id=PrecioPS>" + precio + "</span>" +
     "</ul>"
   "";
 }
@@ -30,7 +28,6 @@ function nintendo() {
       "<li>Incluye dos joycons</li>" +
       "<li>Incluye Mario Odyssey</li>" +
       "<li>Incluye Nintendo Online</li>" +
-      "<li>Precio = $" + "<span id=PrecioNX>" + precio + "</span>" +
     "</ul>"
   "";
 }
@@ -48,11 +45,10 @@ function total(){
   var totalXbox = precioXbox*amountXbox*(1-(discountXbox/100));
   var totalPS = precioPS*amountPS*(1-(discountPS/100));
   var totalNin = precioNin*amountNin*(1-(discountNin/100));
-  var total = (totalXbox + totalPS + totalNin)*(1+IVA);
-  console.log(totalXbox);
+  var total = Math.ceil((totalXbox + totalPS + totalNin)*(1+IVA));
 
   document.getElementById("Total").innerHTML = 
-    "<h2>" + "Total = $" + total + "</h2>" + 
+    "Total = $" + total + 
   "";
 }
 
@@ -70,32 +66,52 @@ function validarContraseña() {
     if(contrasena.length >= 8){
       tamano = true;
     }
-    if(contrasenia.match(/[0-9]/)){
+    if(contrasena.match(/[0-9]/)){
       numero = true;
     }
-    if(contrasenia.match(/[a-z]/)){
+    if(contrasena.match(/[a-z]/)){
       letra = true;
     }
-    if(contrasenia.match(/[!#$%*&.]/)){
+    if(contrasena.match(/[!#$%*&.]/)){
       especial = true;
     }
     if(tamano == true && numero == true && letra == true && especial == true){
       valido = true;
     }
     
-    if(contrasena == verificacion && aceptadaVal == false){
-        document.getElementById("feedback").innerHTML = "La contraseña no cumple los requisitos";
+    if(contrasena == verificacion && valido == false) {
+        document.getElementById("AyudaPassword").innerHTML = "La contraseña no cumple los requisitos";
+        return false;
         
-    }else if(contrasenia == contraseniaConfirm && aceptadaVal == true){
-        document.getElementById("feedback").innerHTML = "Contraseña aceptada";
+    } else if(contrasena == verificacion && valido == true) {
+        document.getElementById("AyudaPassword").innerHTML = "Contraseña aceptada";
+        document.getElementById("AyudaVerify").innerHTML = "Contraseña aceptada";
+        return true;
         
-    }else{
-        document.getElementById("feedback").innerHTML = "Las contraseñas no coinciden";
+    } else {
+        document.getElementById("AyudaVerify").innerHTML = "Las contraseñas no coinciden";
+        return false;
     }
+}
+
+setInterval(habilitar_submit, 500);
+
+function habilitar_submit(){
+  var nombre = document.getElementById("Nombre").value;
+  var apellido = document.getElementById("Apellido").value;
+  var matricula = document.getElementById("Matrícula").value;
+  var mail = document.getElementById("Mail").value;
+  var terms = document.getElementById("Mail").checked;
+  var pwd = validarContraseña();
+
+  if(nombre != "" && apellido != "" && matricula != "" && mail != "" && pwd == true && terms == true){
+      document.getElementById("Enviar").disabled = false;
+      return true;
+  }
 }
 
 function terminar_compra(){
   document.getElementById("Endgame").innerHTML = 
-    "<h2>" + "¡Compra realizada!" + "</h2>"
+    "<h3>" + "¡Compra realizada!" + "</h3>"
   "";
 }

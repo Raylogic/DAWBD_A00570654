@@ -117,3 +117,10 @@ label {
 #Endgame {
     margin-top: 15px;
 }
+#LabDescrip {
+    margin-bottom: 0.5rem;
+}
+#Total {
+    text-decoration: underline;
+    margin-top: 15px;
+}
