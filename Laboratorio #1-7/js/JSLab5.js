@@ -1,5 +1,4 @@
 function xbox() {
-  var precio = 5000;
   document.getElementById("Xbox").innerHTML = 
     "<ul>" +
       "<li>Memoria: 1TB</li>" +
@@ -10,7 +9,6 @@ function xbox() {
   "";
 }
 function playstation() {
-  var precio = 7500;
   document.getElementById("Playstation").innerHTML = 
     "<ul>" +
       "<li>Memoria: 500GB</li>" +
@@ -21,7 +19,6 @@ function playstation() {
   "";
 }
 function nintendo() {
-  var precio = 6000;
   document.getElementById("Nintendo").innerHTML = 
     "<ul>" +
       "<li>Memoria: 100GB</li>" +
@@ -72,7 +69,7 @@ function validarContraseña() {
     if(contrasena.match(/[a-z]/)){
       letra = true;
     }
-    if(contrasena.match(/[!#$%*&.]/)){
+    if(contrasena.match(/[!#$%*&.-]/)){
       especial = true;
     }
     if(tamano == true && numero == true && letra == true && especial == true){
@@ -81,6 +78,7 @@ function validarContraseña() {
     
     if(contrasena == verificacion && valido == false) {
         document.getElementById("AyudaPassword").innerHTML = "La contraseña no cumple los requisitos";
+        document.getElementById("AyudaVerify").innerHTML = "La contraseña no cumple los requisitos";
         return false;
         
     } else if(contrasena == verificacion && valido == true) {
@@ -89,13 +87,13 @@ function validarContraseña() {
         return true;
         
     } else {
+        document.getElementById("AyudaPassword").innerHTML = "Las contraseñas no coinciden";
         document.getElementById("AyudaVerify").innerHTML = "Las contraseñas no coinciden";
         return false;
     }
 }
 
-setInterval(habilitar_submit, 500);
-
+/**
 function habilitar_submit(){
   var nombre = document.getElementById("Nombre").value;
   var apellido = document.getElementById("Apellido").value;
@@ -111,7 +109,10 @@ function habilitar_submit(){
 }
 
 function terminar_compra(){
-  document.getElementById("Endgame").innerHTML = 
-    "<h3>" + "¡Compra realizada!" + "</h3>"
-  "";
+  if(habilitar_submit() == true) {
+    document.getElementById("Endgame").innerHTML = 
+      "¡Compra realizada!" + 
+      "";
+  }
 }
+**/

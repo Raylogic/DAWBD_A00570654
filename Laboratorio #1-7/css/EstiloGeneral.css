@@ -119,8 +119,10 @@ label {
 }
 #LabDescrip {
     margin-bottom: 0.5rem;
+    font-size: 1.1rem;
 }
 #Total {
     text-decoration: underline;
-    margin-top: 15px;
+    margin-top: 20px;
 }
+

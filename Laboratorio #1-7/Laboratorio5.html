@@ -17,10 +17,11 @@
     <section id="Jumbo" class="jumbotron text-center">
         <div class="text-white text-center mt-5">
             <header>Laboratorio #5</header> 
-            <p id="LabDescrip"><strong>Este laboratorio engloba las tres actividades solicitadas:</strong></p>
-            <p id="LabDescrip"><strong>1) Tienda de productos</strong></p>
-            <p id="LabDescrip"><strong>2) Validación de contraseñas</strong></p>
-            <p id="LabDescrip"><strong>3) Ejercicio libre - Formulario</strong></p>
+            <br>
+            <p id="LabDescrip">El laboratorio engloba las tres actividades:</p>
+            <p id="LabDescrip">1) Tienda de productos</p>
+            <p id="LabDescrip">2) Validación de contraseñas</p>
+            <p id="LabDescrip">3) Ejercicio libre - Formulario</p>
         </div>
     </section>
     <!-- Navbar -->
@@ -124,10 +125,11 @@
        </div>
     </section>
 
-    <section class="container-fluid px-0">
+    <section class="container-fluid">
         <div class="row align-items-center">
-            <div class="col-6 mb-4">
-                <div class="row justify-content-center">
+            <div class="col-1 mb-4"></div>
+            <div class="col-4 mb-4 ml-2">
+                <div class="row justify-content-left">
                     <div class="text-white mt-3">
                         <div class="text-white">
                             <button type="button" class="btn btn-secondary" onclick="total()">Monto final</button>
@@ -141,60 +143,48 @@
     <form>
         <section class="container-fluid px-0">
             <div class="row align-items-center">
-                <div class="col-7 mb-4">
-                    <div class="row justify-content-center">
-                        <div class="form-row text-white">
-                            <div class="col-6 col-lg-8">
-                                <h2 id="Registro">Rellena el formulario</h2>
+                <div class="col-1 mb-4"></div>
+                <div class="col-5 mb-4 ml-4">
+                    <div class="row justify-content-left">
+                        <div class="text-white">
+                            <h2 id="Registro">Rellena el formulario</h2>
 
-                                <label for="Nombre">Nombre</label>
-                                <input type="text" class="form-control is-valid" id="Nombre" placeholder="Raymundo" required>
-                                <div class="valid-feedback">
-                                    Puedes poner nombres inventados
+                            <label for="Nombre">Nombre</label>
+                            <input type="text" class="form-control text-muted" id="Nombre" placeholder="Raymundo" required>
+
+                            <label for="Apellido">Apellido</label>
+                            <input type="text" class="form-control text-muted" id="Apellido" placeholder="Romero Arenas" required>
+
+                            <label for="Matrícula">Matrícula</label>
+                            <input type="text" class="form-control text-muted" id="Matrícula" placeholder="A00570654" required>
+
+                            <label for="Mail">Mail</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="Arroba">@</span>
                                 </div>
-
-                                <label for="Apellido">Apellido</label>
-                                <input type="text" class="form-control is-valid" id="Apellido" placeholder="Romero Arenas" required>
-                                <div class="valid-feedback">
-                                    !Los apellidos extraños son lo máximo!
-                                </div>
-
-                                <label for="Matrícula">Matrícula</label>
-                                <input type="text" class="form-control is-valid" id="Matrícula" placeholder="A00570654" required>
-                                <div class="valid-feedback">
-                                    En Campus León la matrícula va ahora en A00573XXX
-                                </div>
-
-                                <label for="Mail">Mail</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="Arroba">@</span>
-                                    </div>
-                                    <input type="Email" class="form-control is-valid" id="Mail" placeholder="A00570654@itesm.mx" required>
-                                    <div class="valid-feedback">
-                                        No lo usaremos para robarte tus datos
-                                    </div>
-                                </div>
-
-                                <label for="Password">Contraseña</label>
-                                <input id="Contrasena" type="Password" placeholder="X-ray1257" class="form-control" pattern=".{8,15}" required title="La contraseña debe tener 8-15 caracteres">
-                                <small id="AyudaPassword" class="form-text text-muted">
-                                    La contraseña debe tener 8-15 caracteres y contener letras, números y caracteres especiales.
-                                </small>
-                                
-                                <label for="Password">Verificar contraseña</label>
-                                <input id="Verify" type="Password" placeholder="X-ray1257" class="form-control" pattern=".{8,15}"required title="La contraseña debe tener 8-15 caracteres">
-                                <small id="AyudaVerify" class="form-text text-muted">
-                                    La contraseña debe tener 8-15 caracteres y contener letras, números y caracteres especiales.
-                                </small>
-
-                                <label for="Agreed">Acepto los términos y condiciones </label>
-                                <input id="Agreed" type="Checkbox" name="Agreed">
-                                <br>
-                                <input type="Submit" id="Enviar" onclick="terminar_compra()" disabled>
-                                <br>
-                                <div id="Endgame"></div>
+                                <input type="Email" class="form-control text-muted" id="Mail" placeholder="A00570654@itesm.mx" required>
                             </div>
+
+                            <label for="Password">Contraseña</label>
+                            <input id="Contrasena" type="Password" placeholder="X-ray1257" class="form-control" pattern=".{8,15}" required title="La contraseña debe tener 8-15 caracteres">
+                            <small id="AyudaPassword" class="form-text text-muted">
+                                La contraseña debe tener 8-15 caracteres y contener letras, números y caracteres especiales.
+                            </small>
+                            
+                            <label for="Password">Verificar contraseña</label>
+                            <input id="Verify" type="Password" placeholder="X-ray1257" class="form-control" pattern=".{8,15}"required title="La contraseña debe tener 8-15 caracteres">
+                            <small id="AyudaVerify" class="form-text text-muted">
+                                La contraseña debe tener 8-15 caracteres y contener letras, números y caracteres especiales.
+                            </small>
+
+                            <label for="Agreed">Acepto los términos y condiciones </label>
+                            <input id="Agreed" type="Checkbox" name="Agreed">
+                            <br><br>
+
+                            <button type="button" class="btn btn-light btn-sm" onclick="validarContraseña()">Validar contraseña</button>
+                            <br>
+                            <input type="Submit" id="Enviar" onclick="terminar_compra()">
                         </div>  
                     </div>
                 </div>
