@@ -49,6 +49,8 @@ function total(){
   "";
 }
 
+//------------------------------------------------------------------
+
 function validarContraseña() {
     var contrasena = document.getElementById("Contrasena").value;
     var verificacion = document.getElementById("Verify").value;
