@@ -13,10 +13,10 @@ function mediana($lista){
     }
 }  
 function ascendente($lista){
-    asort($lista);
+    sort($lista);
     $ascend = "<ul>";
     for($i = 0; $i <12; $i++) {
-      $lista[$i] = $_POST['n'.$i];
+
       $ascend .= "<li>".$lista[$i]."</li>";
     }
     $ascend .= "</ul>";
@@ -28,7 +28,7 @@ function descendente($lista){
     rsort($lista);
     $descend = "<ul>";
     for($i = 0; $i <12; $i++) {
-      $lista[$i] = $_POST['n'.$i];
+
       $descend .= "<li>".$lista[$i]."</li>";
     }
     $descend .= "</ul>";
