@@ -43,9 +43,13 @@ function total(){
   var totalPS = precioPS*amountPS*(1-(discountPS/100));
   var totalNin = precioNin*amountNin*(1-(discountNin/100));
   var total = Math.ceil((totalXbox + totalPS + totalNin)*(1+IVA));
+  var impuesto = Math.ceil(totalXbox + totalPS + totalNin)*IVA;
 
   document.getElementById("Total").innerHTML = 
     "Total = $" + total + 
+  "";
+  document.getElementById("IVA").innerHTML = 
+    "IVA = $" + impuesto + 
   "";
 }
 
@@ -95,8 +99,7 @@ function validarContraseña() {
     }
 }
 
-/**
-function habilitar_submit(){
+function terminar_compra(){
   var nombre = document.getElementById("Nombre").value;
   var apellido = document.getElementById("Apellido").value;
   var matricula = document.getElementById("Matrícula").value;
@@ -104,17 +107,9 @@ function habilitar_submit(){
   var terms = document.getElementById("Mail").checked;
   var pwd = validarContraseña();
 
-  if(nombre != "" && apellido != "" && matricula != "" && mail != "" && pwd == true && terms == true){
-      document.getElementById("Enviar").disabled = false;
-      return true;
-  }
-}
-
-function terminar_compra(){
-  if(habilitar_submit() == true) {
-    document.getElementById("Endgame").innerHTML = 
+  if(nombre != "" && apellido != "" && matricula != "" && mail != "" && pwd == true){
+      document.getElementById("Endgame").innerHTML = 
       "¡Compra realizada!" + 
       "";
   }
 }
-**/
