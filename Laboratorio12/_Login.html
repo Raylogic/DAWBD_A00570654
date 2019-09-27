@@ -1,0 +1,23 @@
+<div class="container">
+    <h1 class="center-align">Login</h1>
+    <form class="col s12" action="_Pagina.php">
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="email" type="email" name="Mail" class="validate">
+                <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="password" type="password" name="Contraseña" class="validate">
+                <label for="password">Contraseña</label>
+            </div>
+        </div>
+        <div class="container center-align">
+            <button onclick="M.toast({html: 'Login exitoso', classes: 'rounded'});" class="btn waves-effect waves-light center-align" type="submit" name="login">Enviar
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+        <br>
+    </form>
+</div>

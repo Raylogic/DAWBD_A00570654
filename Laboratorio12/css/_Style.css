@@ -1,0 +1,79 @@
+body {
+	font-family: "Lato";
+	color: black;
+}
+header {
+    font-size: 4rem;
+    margin: auto;
+    width: 35%;
+}
+td {
+    text-align: center;
+    width: 40px;
+}
+strong {
+    font-size: 1.2rem;
+}
+label {
+    margin-top: 15px;
+}
+@media (max-width: 800px) {
+    header {
+        font-size: 3rem;
+    }
+}
+@media (max-width: 500px) {
+    header {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 600px) {
+    article {
+        font-size: 1rem;
+    }
+    footer {
+    	text-align: center;
+    }
+    footer hr {
+    	align-self: center;
+    }
+}
+#menu {
+    font-weight: 400;
+    font-size: 18px;  
+    color: #FFCD00;   
+}
+#menu .nav-link {
+    color: white;
+    margin-right: 15px;
+}
+#menu .nav-link:hover {
+    color: #FFCD00;
+}
+#menu .navbar-brand {
+    color: #FFCD00;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.navbar.scrolled {
+    background: #004240;
+    transition: background 500ms;
+}
+.Referencias {
+    margin: auto;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.Contenido {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.Bibliografia {
+    text-decoration: underline;
+}
