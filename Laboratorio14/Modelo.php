@@ -34,7 +34,7 @@ function icon_card($id=0) {
             <div class="col s12 m6 l4">
                 <div class="card">
                     <div class="card-image">
-                        <a href="Iconos.php?id='.$fila["ID"].'"><img src="'.$fila["URL"].'" max-width:"90%"></a>
+                        <a href="Iconos.php?ID='.$fila["ID"].'"><img src="'.$fila["URL"].'" max-width:"90%"></a>
                         <span class="card-title">'.$fila["Name"].'</span>
                     </div>
                     <div class="card-content">

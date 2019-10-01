@@ -64,18 +64,49 @@ function print_voluntarios($lista) {
     echo "</section>";
 }
 
-function get_voluntarios_porEdad($edad) {
-    $operation = openDB();
-    $query = 'SELECT VolID, Nombre, Mail, Teléfono, Edad FROM voluntarios WHERE Edad LIKE '%".$edad."%'';
-    $resultado = mysqli_query($operation, $query);
-    closeDB($operation);
-    
-    return $resultado;
-}
-function get_voluntarios_porMail($mail) {
-    $operation = openDB();
-    $query = 'SELECT VolID, Nombre, Mail, Teléfono, Edad FROM voluntarios WHERE Mail LIKE '%".$mail."%'';
-    $resultado = mysqli_query($operation, $query);
+function get_voluntarios_porCriterio($Columna, $criterio) {
+    $operation = connectDB();
+    $query = 'SELECT VolID, Nombre, Mail, Teléfono, Edad FROM voluntarios'; 
+    if(is_string($criterio)){
+        if($criterio != ""){
+            $query .= " WHERE $Columna LIKE '%".$criterio."%'";
+        }
+    } else if(is_int($criterio)){
+        if($criterio != 0){
+            $query .= " WHERE $Columna=$criterio";
+        }
+    }
+
+    $registros = $operation->query($query);
+
+    $resultado = "<section class='container-fluid'>
+                  <div class='row'>
+                  <div class='col s12 m4 l1'></div>
+                  <div class='col s12 m4 l10'>
+                  <table border='1px solid black'>
+                    <th>
+                        <td>" . "Nombre" . "</td>
+                        <td>" . "Mail" . "</td>
+                        <td>" . "Teléfono" . "</td>
+                        <td>" . "Edad" . "</td>
+                    </th>";
+    while ($row = mysqli_fetch_array($registros, MYSQLI_BOTH)) {
+        $resultado .= "<tr>
+                            <td>" . $row["VolID"] . "</td>
+                            <td>" . $row["Nombre"] . "</td>
+                            <td>" . $row["Mail"] . "</td>
+                            <td>" . $row["Teléfono"] . "</td>
+                            <td>" . $row["Edad"] . "</td>
+                        </tr>";
+    }
+    $resultado .= "</table>
+                    </div>
+                    <div class='col s12 m4 l1'>
+                    </div>
+                    </div>
+                    </div>
+                    </section>";
+    mysqli_free_result($registros);
     closeDB($operation);
     
     return $resultado;
