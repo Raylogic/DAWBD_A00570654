@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if(($_SESSION["Mail"] == "A00570654@itesm.mx")) {
+if($_SESSION["Mail"] == "A00570654@itesm.mx" && $_SESSION["Contraseña"] == "X-ray1257") {
 
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -44,8 +44,12 @@ if(($_SESSION["Mail"] == "A00570654@itesm.mx")) {
             echo "Hubo un error al subir la imagen";
         }
     }
+    $_SESSION["Imagen"] = $target_file;
+    header("location:Laboratorio12.php");
+
 } else {
     header("location:index.php");
 }
 
 ?>
+

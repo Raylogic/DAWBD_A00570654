@@ -1,0 +1,78 @@
+	<section class="container-fluid">
+  		<div class="col l12">
+            <div class="center-align">
+                <header>Laboratorio #12</header>
+                <h4><a href="Logout.php">Pulsa aquí para regresar</a></h4>
+            </div>
+        </div>
+	</section>
+	<br>
+	<section class="container-fluid">
+        <div class="row">
+            <div class="col s12 m4 l1"></div>
+            <div class="col s12 m4 l10">
+                <article>
+                    <p><strong class="Bibliografia">Preguntas:</strong>
+                    <p><strong>1) ¿Por qué es importante hacer un session_unset() y luego un session_destroy()? </strong><br>
+                        <ul>
+                            <li> > session_unset() = Elimina las variables que permitieron iniciar la sesión, por lo que sirve como medida de seguridad para evitar accesos restringidos</li>
+                            <li> > session_destroy() = Elimina la sesión para evitar que un usuario no autorizado acceda al sistema</li>
+                        </ul>
+                    </p>
+                    <p><strong>2) ¿Cuál es la diferencia entre una variable de sesión y una cookie? (2)</strong><br>
+                        <ul>
+                            <li> > Variable de sesión = Guarda los datos de la sesión en un directorio temporal del lado del servidor mientras esté activa</li>
+                            <li> > Cookie = Guarda los datos de la sesión en un archivo de texto del lado del cliente para que se puedan usar en futuras sesiones</li>
+                        </ul>
+                    </p>
+                    <p><strong>3) ¿Qué técnicas se utilizan en sitios como facebook para que el usuario no sobreescriba sus fotos en el sistema de archivos cuando sube una foto con el mismo nombre? (3)</strong><br>
+                        <ul>
+                            <li>Guarda las fotos en una tabla de dispersión y añade su hash al nombre del archivo</li>
+                        </ul>
+                    </p>
+                    <p><strong>4) ¿Qué es CSRF y cómo puede prevenirse? (4)</strong><br>
+                        <ul>
+                            <li>Acción que fuerza al usuario a realizar acciones no deseadas en una aplicación web en la que están autenticados mediante código embebido.</li>
+                        </ul>
+                    </p>
+                </article>
+            </div>
+            <div class="col s12 m4 l1"></div>
+            </div>
+        </div>
+	</section>
+	<section class="container-fluid">
+        <div class="row">
+            <div class="col s12 m4 l1"></div>
+            <div class="col s12 m4 l10">
+	            <footer>
+	                <p><strong class="Bibliografia">Referencias:</strong>
+	                    <ol>
+	                        <li>GeeksforGeeks, 2018, "session_unset() vs session_destroy() in PHP" (25/09/2019), Recuperado de: https://www.geeksforgeeks.org/session_unset-vs-session_destroy-in-php/</li>
+	                        <li>Tutorialspoint, 2019, "What is the difference between session and cookies?" (25/09/2019), Recuperado de: https://www.tutorialspoint.com/What-is-the-difference-between-session-and-cookies</li>
+	                        <li>Facebook, 2019, "File Uploading with the Facebook SDK for PHP" (25/09/2019), Recuperado de: https://developers.facebook.com/docs/php/FacebookFile/5.0.0</li>
+	                        <li>Cross-Site Request Forgery (CSRF), 2018, "Cross-Site Request Forgery (CSRF)" (25/09/2019), Recuperado de: https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)</li>
+	                    </ol>
+	                </p>  
+	            </footer>                    
+	        </div>
+            <div class="col s12 m4 l1"></div>
+            </div>
+        </div>
+	</section>
+	<section class="container-fluid">
+        <div class="row">
+            <div class="col s12 m4 l1"></div>
+            <div class="col s12 m4 l10">
+	            <form method="POST" action="SubirImagen.php" enctype="multipart/form-data">
+					<label>Seleccionar archivo </label>
+					<br>
+					<input type="file" name="fileToUpload" id="fileToUpload">
+					<br><br>
+					<input type="submit" name="Enviar" value="Cargar">
+				</form>                 
+	        </div>
+            <div class="col s12 m4 l1"></div>
+            </div>
+        </div>
+	</section>
