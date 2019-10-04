@@ -1,0 +1,66 @@
+<section>
+    <div class="container left-align">
+        <div class="col s11 m11 l1"></div>
+        <div class="col s11 m11 l11">
+            <a href="Laboratorio15.php"class="waves-effect waves-light btn-large right-align loginButton"><i class="material-icons right">arrow_back</i>Regresar a Voluntarios</a>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="container right-align">
+            <h1 class="center-align">Registrar Voluntario</h1>
+        </div>
+    </div>
+</section>
+<br>
+<section>
+    <div class="container">
+        <form class="col s12" method="POST" action="Laboratorio15.php">
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <?php if(isset($error_nombre)): ?>
+                        <span class="red-text">*<?=$error_nombre?></span>
+                    <?php endif; ?>
+                    <input id="Nombre" type="text" name="Nombre" class="validate">
+                    <label for="Nombre">Nombre</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <?php if(isset($error_mail)): ?>
+                        <span class="red-text">*<?=$error_mail?></span>
+                    <?php endif; ?>
+                    <input id="Mail" type="email" name="Mail" class="validate">
+                    <label for="Mail">Mail</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <?php if(isset($error_telefono)): ?>
+                        <span class="red-text">*<?=$error_telefono?></span>
+                    php endif; ?>
+                    <input id="Telefono" type="text" name="Telefono" class="validate">
+                    <label for="Telefono">Telefono</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <?php if(isset($error_edad)): ?>
+                        <span class="red-text">*<?=$error_edad?></span>
+                    <?php endif; ?>
+                    <input id="Edad" type="text" name="Edad" class="validate">
+                    <label for="Edad">Edad</label>
+                </div>
+            </div>
+            <br>
+            <div class="container center-align">
+                <button onclick="M.toast({html: 'Login exitoso', classes: 'rounded'});" 
+                class="btn waves-effect waves-light center-align loginButton" type="submit" name="login">Registrar
+                <i class="fas fa-tint loginIcon"></i>
+                </button>
+            </div>
+            <br>
+        </form>
+    </div>
+</section>

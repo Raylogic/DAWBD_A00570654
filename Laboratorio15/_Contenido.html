@@ -1,0 +1,70 @@
+	<section class="container-fluid">
+  		<div class="col l12">
+            <div class="center-align">
+                <header>Laboratorio #15</header>
+                <h4><a href="Logout.php">Pulsa aquí para regresar</a></h4>
+            </div>
+        </div>
+	</section>
+	<br>
+	<section class="container-fluid">
+        <div class="row">
+            <div class="col s12 m4 l1"></div>
+            <div class="col s12 m4 l10">
+                <article>
+                    <p><strong class="Bibliografia">Preguntas:</strong>
+                    <p><strong>1) ¿Por qué es una buena práctica separar el modelo del controlador? (1) </strong><br>
+                        <ul>
+                            <li> Permite reutilizar código para futuros programas</li>
+                            <li> Flexibiliza la forma de desplegar la información</li>
+                            <li> Facilita el manejo de memoria al desusar vistas fuera de pantalla</li>
+                        </ul>
+                    </p>
+                    <p><strong>2) ¿Qué es SQL injection y cómo se puede prevenir? (2) </strong><br>
+                        <ul>
+                            <li> Vulnerabilidad que permite inyectar código SQL para interferir con los queries de una base de datos con el fin de extraer/modificar datos. </li>
+                            <li> Puede provocar desde cambios persistentes en una aplicación web o creación de puertas traseras, hasta comprometer el funcionamiento de un servidor e incluso dejar obsoleta una base de datos.</li>
+                        </ul>
+                        <p class="Bibliografia"> ¿Cómo prevenirlo? </p>
+                        <ol>
+                            <li>Queries parametrizados = Permite pre-compilar una sentencia SQL para identificar qué variables deben insertarse en ella para su ejecución</li>
+                            <li>Stored Procedures = Hace que la aplicación trate los inputs como datos en vez de comandos SQL</li>
+                            <li>Validación de inputs = Asegura que los inputs cumplan con los formatos especificados</li>
+                            <li>Limitar privilegios = Evita conectarse al núcleo de la base de datos con una cuenta</li>
+                            <li>Mensajes de error genéricos = Evita mostrar información sobre la arquitectura de la base de datos</li>
+                        </ol>
+                    </p>
+                </article>
+            </div>
+            <div class="col s12 m4 l1"></div>
+            </div>
+        </div>
+	</section>
+	<section class="container-fluid">
+        <div class="row">
+            <div class="col s12 m4 l1"></div>
+            <div class="col s12 m4 l10">
+	            <footer>
+	                <p><strong class="Bibliografia">Referencias:</strong>
+	                    <ol>
+	                        <li>Anónimo, 2012, "MVC: why the separation of model, view, and controller?" (01/10/2019), Recuperado de: https://stackoverflow.com/questions/7045093/mvc-why-the-separation-of-model-view-and-controller</li>
+                            <li>PortSwagger, 2018, "SQL injection" (01/10/2019), Recuperado de: https://portswigger.net/web-security/sql-injection</li>
+                            <li>TablePlus, 2018, "8 best practices to prevent SQL Injection Attacks" (01/10/2019), Recuperado de: https://tableplus.com/blog/2018/08/best-practices-to-prevent-sql-injection-attacks.html</li>
+	                    </ol>
+	                </p>  
+	            </footer>                    
+	        </div>
+            <div class="col s12 m4 l1"></div>
+            </div>
+        </div>
+	</section>
+    <section class="container-fluid">
+        <div class="row">
+            <form method="POST" action="RegistrarVoluntario.php">
+                <div class="col s12 m4 l1"></div>
+                <div class="col s12 m4 l2">
+                    <button onclick="M.toast({html: 'Registro exitoso', classes: 'rounded'});" class="btn waves-effect waves-light center-align" type="submit" name="login">Registrar Voluntario</button>          
+                </div>
+            </form>
+        </div>
+    </section>
