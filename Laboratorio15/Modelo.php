@@ -55,7 +55,7 @@ function print_voluntarios($lista) {
             echo "<td>" . $row["Edad"] . "</td>";
             echo "<td>";
             echo '<a href="ModificarVoluntario.php?VolID='.$row["VolID"].'"><i class="material-icons green-text">edit</i></a>';
-            echo '<a href="Laboratorio15.php?VolID='.$row["VolID"].'"><i class="material-icons red-text"> delete</i></a>';
+            echo '<a href="EliminarVoluntario.php?VolID='.$row["VolID"].'"><i class="material-icons red-text"> delete</i></a>';
             echo "</td>";
             echo "</tr>";
         }
@@ -71,7 +71,7 @@ function print_voluntarios($lista) {
 function registrar_voluntario($nombre, $mail, $telefono, $edad) {
     
     $operacion = connectDB();
-    $query='INSERT INTO voluntarios (nombre,mail,telefono,edad) VALUES (?,?,?,?) ';
+    $query='INSERT INTO voluntarios (Nombre,Mail,Telefono,Edad) VALUES (?,?,?,?) ';
 
     if (!($statement = $operacion->prepare($query))) {
         die("No se pudo preparar la consulta para la base de datos: (" . $operacion->errno . ") " . $operacion->error);
@@ -92,11 +92,11 @@ function buscar_voluntario($id) {
 
     $registros = $operacion->query($query);
     while ($row = mysqli_fetch_array($registros, MYSQLI_BOTH)) {
+        $voluntario["VolID"] = $row["VolID"];
         $voluntario["Nombre"] = $row["Nombre"];
         $voluntario["Mail"] = $row["Mail"];
         $voluntario["Telefono"] = $row["Telefono"];
         $voluntario["Edad"] = $row["Edad"];
-        $voluntario["VolID"] = $row["VolID"];
     }
     mysqli_free_result($registros);
     closeDB($operacion);
@@ -107,13 +107,12 @@ function buscar_voluntario($id) {
 function modificar_voluntario($id, $nombre, $mail, $telefono, $edad) {
     
     $operacion = connectDB();
-    $antiguo_voluntario=buscar_voluntario($id);
     $query='UPDATE voluntarios SET Nombre=?, Mail=?, Telefono=?, Edad=? WHERE VolID=?';
 
     if (!($statement = $operacion->prepare($query))) {
         die("No se pudo preparar la consulta para la base de datos: (" . $operacion->errno . ") " . $operacion->error);
     }
-    if (!$statement->bind_param("sss", $nombre, $foto, $id)) {
+    if (!$statement->bind_param("sssss", $nombre, $mail, $telefono, $edad, $id)) {
         die("Falló la vinculación de los parámetros: (" . $statement->errno . ") " . $statement->error); 
     }
     if (!$statement->execute()) {
@@ -125,13 +124,18 @@ function modificar_voluntario($id, $nombre, $mail, $telefono, $edad) {
 
 function eliminar_voluntario($id) {
     $operacion = connectDB();
-    $query='DELETE FROM voluntarios WHERE VolID=$id';
+    $query='DELETE FROM voluntarios WHERE VolID=?';
 
-    $resultado = mysqli_query($operacion, $query);
+    if (!($statement = $operacion->prepare($query))) {
+        die("No se pudo preparar la consulta para la base de datos: (" . $operacion->errno . ") " . $operacion->error);
+    }
+    if (!$statement->bind_param("s", $id)) {
+        die("Falló la vinculación de los parámetros: (" . $statement->errno . ") " . $statement->error); 
+    }
+    if (!$statement->execute()) {
+        die("Falló la ejecución de la consulta: (" . $statement->errno . ") " . $statement->error);
+    }
 
     closeDB($operacion);
-    
-    return $resultado;
 }
-
 ?>

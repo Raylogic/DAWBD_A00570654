@@ -18,7 +18,11 @@
     <div class="container">
         <form class="col s12" method="POST" action="ActualizarVoluntario.php">
             <div class="row">
-                <input type="hidden" name="id" value='<?=$voluntarios["VolID"]?>'>
+                <div class="input-field col s6 offset-s3">
+                    <input type="hidden" name="VolID" value='<?=$voluntarios["VolID"]?>'>
+                </div>
+            </div>
+            <div class="row">
                 <div class="input-field col s6 offset-s3">
                     <?php if(isset($error_nombre)): ?>
                         <span class="red-text">*<?=$error_nombre?></span>
@@ -40,7 +44,7 @@
                 <div class="input-field col s6 offset-s3">
                     <?php if(isset($error_telefono)): ?>
                         <span class="red-text">*<?=$error_telefono?></span>
-                    php endif; ?>
+                    <?php endif; ?>
                     <input id="Telefono" type="text" name="Telefono" class="validate" value='<?=$voluntarios["Telefono"]?>'>
                     <label for="Telefono">Telefono</label>
                 </div>

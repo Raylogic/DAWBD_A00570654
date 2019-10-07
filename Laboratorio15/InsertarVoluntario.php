@@ -22,11 +22,11 @@ if($_POST["Edad"] == ""){
 }
 
 if($errores == 0){
-	modificar_voluntario($_POST["VolID"], $_POST["Nombre"], $_POST["Mail"], $_POST["Telefono"], $_POST["Edad"]);
+	registrar_voluntario($_POST["Nombre"], $_POST["Mail"], $_POST["Telefono"], $_POST["Edad"]);
 	header("location:Laboratorio15.php");
 } else {
 	include_once("_Header.html");
-    include_once("_EditarVoluntario.html");
+	include_once("_FormasVoluntario.html");
 	include_once("_Footer.html");
 }
 		

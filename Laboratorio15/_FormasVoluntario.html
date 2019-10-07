@@ -2,7 +2,7 @@
     <div class="container left-align">
         <div class="col s11 m11 l1"></div>
         <div class="col s11 m11 l11">
-            <a href="Laboratorio15.php"class="waves-effect waves-light btn-large right-align loginButton"><i class="material-icons right">arrow_back</i>Regresar a Voluntarios</a>
+            <a href="Laboratorio15.php" class="waves-effect waves-light btn-large right-align loginButton"><i class="material-icons right">arrow_back</i>Regresar a Voluntarios</a>
         </div>
     </div>
 </section>
@@ -16,11 +16,11 @@
 <br>
 <section>
     <div class="container">
-        <form class="col s12" method="POST" action="Laboratorio15.php">
+        <form class="col s12" method="POST" action="InsertarVoluntario.php">
             <div class="row">
                 <div class="input-field col s6 offset-s3">
                     <?php if(isset($error_nombre)): ?>
-                        <span class="red-text">*<?=$error_nombre?></span>
+                        <span class="red-text">*<?=$error_nombre?></span><br>
                     <?php endif; ?>
                     <input id="Nombre" type="text" name="Nombre" class="validate">
                     <label for="Nombre">Nombre</label>
@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="input-field col s6 offset-s3">
                     <?php if(isset($error_mail)): ?>
-                        <span class="red-text">*<?=$error_mail?></span>
+                        <span class="red-text">*<?=$error_mail?></span><br>
                     <?php endif; ?>
                     <input id="Mail" type="email" name="Mail" class="validate">
                     <label for="Mail">Mail</label>
@@ -38,8 +38,8 @@
             <div class="row">
                 <div class="input-field col s6 offset-s3">
                     <?php if(isset($error_telefono)): ?>
-                        <span class="red-text">*<?=$error_telefono?></span>
-                    php endif; ?>
+                        <span class="red-text">*<?=$error_telefono?></span><br>
+                    <?php endif; ?>
                     <input id="Telefono" type="text" name="Telefono" class="validate">
                     <label for="Telefono">Telefono</label>
                 </div>
@@ -47,7 +47,7 @@
             <div class="row">
                 <div class="input-field col s6 offset-s3">
                     <?php if(isset($error_edad)): ?>
-                        <span class="red-text">*<?=$error_edad?></span>
+                        <span class="red-text">*<?=$error_edad?></span><br>
                     <?php endif; ?>
                     <input id="Edad" type="text" name="Edad" class="validate">
                     <label for="Edad">Edad</label>
