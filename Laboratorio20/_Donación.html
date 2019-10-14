@@ -1,0 +1,88 @@
+<div class="col s11 m11 l11">
+    <a href="Laboratorio20.php"class="waves-effect waves-light btn-large right-align Regresar"><i class="material-icons right">arrow_back</i>Regresar a Laboratorio 20</a>
+</div>
+<section>
+    <div class="container">
+        <h1 class="center-align">Registrar Donación</h1>
+    </div>
+</section>
+<br>
+<div class="container">
+    <form class="col s12" method=post action="Donación.php" enctype="multipart/form-data">
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <label>Seleccionar donante</label>
+                <br><br>
+                <select id="Donador">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="Institución">Institución</option>
+                    <option value="Persona">Persona</option>
+                </select>
+            </div>
+        </div>
+        <div id="Institución" hidden>
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input id="Razon" type="text" name="Razon" class="validate">
+                    <label for="Razon">Razón Social</label>
+                </div>
+            </div>
+        </div>
+        <div id="Persona" hidden>
+            <div class="row" >
+                <div class="input-field col s6 offset-s3">
+                    <input id="Nombre" type="text" name="Nombre" class="validate">
+                    <label for="Nombre">Nombre</label>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="input-field col s6 offset-s3">
+                    <input id="ApellidoP" type="text" name="ApellidoP" class="validate">
+                    <label for="ApellidoP">Apellido Paterno</label>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="input-field col s6 offset-s3">
+                    <input id="ApellidoM" type="text" name="ApellidoM" class="validate">
+                    <label for="ApellidoM">Apellido Materno</label>
+                </div>
+            </div>
+        </div>
+        <div id="Común" hidden>
+            <div class="row" >
+                <div class="input-field col s6 offset-s3">
+                    <label for="Fecha">Fecha</label>
+                    <input id="Fecha" type="text" class="datepicker" name="Fecha">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input id="Mail" type="email" name="Mail" class="validate">
+                    <label for="Mail">Mail</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input id="Telefono" type="text" name="Telefono" class="validate">
+                    <label for="Telefono">Teléfono</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <textarea id="Descripción" class="materialize-textarea"></textarea>
+                    <label for="Descripción">Descripción</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container center-align">
+            <button onclick="M.toast({html: 'Registro exitoso', classes: 'rounded'});" 
+            class="btn waves-effect waves-light center-align loginButton" type="submit" name="login">Registrar
+            <i class="fas fa-tint loginIcon"></i>
+            </button>
+        </div>
+        <br>
+    </form>
+</div>

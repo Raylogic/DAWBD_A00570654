@@ -1,0 +1,90 @@
+	<nav id="menu">
+        <div class="nav-wrapper blue lighten-4">
+            <a href="#" class="navbar-brand"><i class="fas fa-address-book"></i> DAW</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li class="active"><a href="Laboratorio20.php" class="nav-link">Laboratorio 20</a></li>
+                <li class="active"><a href="Donación.php" class="nav-link">Registrar donación</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <section class="container-fluid">
+  		<div class="col l12">
+            <div class="center-align">
+                <header>Laboratorio #20</header>
+                <h4><a href="Logout.php">Pulsa aquí para regresar</a></h4>
+            </div>
+        </div>
+	</section>
+	<br>
+	<section class="container-fluid">
+        <div class="row">
+            <div class="col s12 m4 l1"></div>
+            <div class="col s12 m4 l10">
+                <article>
+                    <p><strong class="Bibliografia">Preguntas:</strong>
+                    <p><strong>1) Explica y elabora un diagrama sobre cómo funciona AJAX con jQuery. </strong><br>
+                        <ul>
+                            <li> JQuery permite usar varios métodos de AJAX para solicitar texto, HTML, XML o JSON para cargar datos externos directamente en un HTML. En un sistema, el servidor web con la base de datos (backend) se comunica con el HTML y CSS (frontend) mediante el control de AJAX para pedir-solicitar información. JQuery se encarga de procesar las peticiones y desplegarlas en el HTML a través de métodos AJAX.</li>
+                        </ul>
+                        <img src="Diagrama.jpg" width="800">
+                    </p>
+                    <p><strong> 2) ¿Qué alternativas a jQuery existen? (2) </strong><br>
+                        <ul>
+                            <li> JS - Librería nativa de Javascript </li>
+                            <li> UmbrellaJS - Métodos de Javascript para selectores</li>
+                            <li> MooTools - Framework de Javascript</li>
+                            <li> ZeptoJS - Librería minimalista de Javascript </li>
+                            <li> ExtJS - Javascript Extendido basado en YahooUserInterface</li>
+                        </ul>
+                    </p>
+                </article>
+            </div>
+            <div class="col s12 m4 l1"></div>
+            </div>
+        </div>
+	</section>
+	<section class="container-fluid">
+        <div class="row">
+            <div class="col s12 m4 l1"></div>
+            <div class="col s12 m4 l10">
+	            <footer>
+	                <p><strong class="Bibliografia">Referencias:</strong>
+	                    <ol>
+                            <li>W3Schools, 2019, "jQuery - AJAX Introduction" (11/10/2019), Recuperado de: https://www.w3schools.com/jquery/jquery_ajax_intro.asp</li>
+                            <li>EDUCBA, 2018, "jQuery Alternatives" (11/10/2019), Recuperado de: https://www.educba.com/jquery-alternatives/</li>
+	                    </ol>
+	                </p>  
+	            </footer>                    
+	        </div>
+            <div class="col s12 m4 l1"></div>
+            </div>
+        </div>
+	</section>
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col s12 m4 l1"></div>
+            <div class="col s12 m4 l3">
+                <nav>
+                    <div class="nav-wrapper">
+                            <div class="input-field">
+                                <input type="search" name="Search" id="Search" onkeyup="sendRequest()" required>
+                                <label class="label-icon" for="Search"><i class="material-icons">search</i></label>
+                                <i class="material-icons">close</i>
+                            </div>
+                    </div>
+                </nav>      
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col s12 m4 l1"></div>
+            <div class="col s12 m4 l10" id="SortedTable">
+                <?php if(!isset($GET_["q"])): ?>
+                    <?php echo print_voluntarios()?>
+                <?php endif; ?>
+            </div>
+            <div class="col s12 m4 l1"></div>
+        </div>
+    </section>

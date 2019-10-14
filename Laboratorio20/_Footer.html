@@ -1,0 +1,20 @@
+	</main>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/Materialize.js"></script>
+	<script type="text/javascript" src="js/Select.js"></script>
+	<script type="text/javascript" src="js/Ajax.js"></script>
+	<script>
+		$("#Donador").on("change", function() {
+	    	if($("#Donador").val() == "Persona") {
+	    		$("#Persona").show();
+	    		$("#Institución").hide();
+	    	} else if($("#Donador").val() == "Institución"){
+	    		$("#Institución").show();
+	    		$("#Persona").hide();
+	    	}
+	    	$("#Común").show();
+		});
+	</script>
+</body>
+</html>

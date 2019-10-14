@@ -1,0 +1,95 @@
+	<nav id="menu">
+        <div class="nav-wrapper blue lighten-4">
+            <a href="#" class="navbar-brand"><i class="fas fa-address-book"></i> DAW</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li class="active"><a href="Laboratorio18.php" class="nav-link">Laboratorio 18</a></li>
+                <li class="active"><a href="Iconos.php" class="nav-link">Lista de íconos</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <section class="container-fluid">
+  		<div class="col l12">
+            <div class="center-align">
+                <header>Laboratorio #18</header>
+                <h4><a href="Logout.php">Pulsa aquí para regresar</a></h4>
+            </div>
+        </div>
+	</section>
+	<br>
+	<section class="container-fluid">
+        <div class="row">
+            <div class="col s12 m4 l1"></div>
+            <div class="col s12 m4 l10">
+                <article>
+                    <p><strong class="Bibliografia">Preguntas:</strong>
+                    <p><strong>1) ¿Qué importancia tiene AJAX en el desarrollo de RIA's (Rich Internet Applications)? (1) </strong><br>
+                        <ul>
+                            <li> Asegura que una aplicación web trabaje de forma incondicional en un navegador, tal como una aplicación de escritorio</li>
+                            <li> Reduce el tiempo de procesamiento de tareas entre cliente-servidor</li>
+                        </ul>
+                    </p>
+                    <p><strong>¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones de seguridad, del lado del cliente o del lado del servidor? (2) </strong><br>
+                        <ul>
+                            <li> SQL Injection, XSS, Vulnerabilidades XMLHTTP Request</li>
+                            <li> Las validaciones se hacen del lado del cliente antes de enviarlas al servidor</li>
+                            <li> JQuery Validate es una biblioteca que permite validar formularios del lado del cliente </li>
+                        </ul>
+                    </p>
+                    <p><strong>3) ¿Qué es JSON? (3) </strong><br>
+                        <ul>
+                            <li> Es un formato basado en texto que representa datos estructurados en la sintaxis de objetos de Javascript</li>
+                            <li> Permite intercambiar-transmitir datos en aplicaciones web</li>
+                        </ul>
+                    </p>
+                </article>
+            </div>
+            <div class="col s12 m4 l1"></div>
+            </div>
+        </div>
+	</section>
+	<section class="container-fluid">
+        <div class="row">
+            <div class="col s12 m4 l1"></div>
+            <div class="col s12 m4 l10">
+	            <footer>
+	                <p><strong class="Bibliografia">Referencias:</strong>
+	                    <ol>
+                            <li>Brainkart, 2018, "Ajax-Enabled Rich Internet Applications" (08/10/2019), Recuperado de: https://www.brainkart.com/article/Ajax-Enabled-Rich-Internet-Applications_10936/</li>
+                            <li>Anónimo, 2017, "Validar formulario con jQuery Validate y procesar con Ajax" (08/10/2019), Recuperado de: https://www.jose-aguilar.com/blog/validar-formulario-con-jquery-validate-procesar-con-ajax/</li>
+                            <li>MDN, 2019, "Trabajando con JSON" (08/10/2019), Recuperado de: https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/JSON</li>
+	                    </ol>
+	                </p>  
+	            </footer>                    
+	        </div>
+            <div class="col s12 m4 l1"></div>
+            </div>
+        </div>
+	</section>
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col s12 m4 l1"></div>
+            <div class="col s12 m4 l3">
+                <nav>
+                    <div class="nav-wrapper">
+                            <div class="input-field">
+                                <input type="search" name="Search" id="Search" onkeyup="sendRequest()" required>
+                                <label class="label-icon" for="Search"><i class="material-icons">search</i></label>
+                                <i class="material-icons">close</i>
+                            </div>
+                    </div>
+                </nav>      
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col s12 m4 l1"></div>
+            <div class="col s12 m4 l10" id="SortedTable">
+                <?php if(!isset($GET_["q"])): ?>
+                    <?php echo print_voluntarios()?>
+                <?php endif; ?>
+            </div>
+            <div class="col s12 m4 l1"></div>
+        </div>
+    </section>

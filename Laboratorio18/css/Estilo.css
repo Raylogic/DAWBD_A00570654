@@ -1,0 +1,41 @@
+body {
+    font-family: "Lato";
+    color: black;
+}
+header {
+    font-size: 4rem;
+    margin-top: 5px;
+    margin: auto;
+    width: 35%;
+}
+article {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+footer {
+    margin: auto;
+    padding-right: 10px;
+}
+strong {
+    font-size: 1.2rem;
+}
+.Bibliografia {
+    text-decoration: underline;
+}
+#menu {
+    font-weight: 400;
+    font-size: 18px;  
+    color: black;
+}
+#menu .nav-link {
+    color: black;
+}
+#menu .nav-link:hover {
+    color: rgb(0,99,100);
+}
+#menu .navbar-brand {
+    color: black;
+    margin-left: 15px;
+}
+
