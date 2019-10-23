@@ -2,10 +2,15 @@
 
 function connectDB() {
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "laboratorio15";
+    $servername = "mysql1008.mochahost.com";
+    $username = "dawbdorg_0570654";
+    $password = "0570654";
+    $dbname = " dawbdorg_A00570654";
+
+    #$servername = "localhost";
+    #$username = "root";
+    #$password = "";
+    #$dbname = "laboratorio15";
     
     $environment = "DEV";
     if ($environment == "DEV") {
