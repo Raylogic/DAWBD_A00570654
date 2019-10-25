@@ -51,6 +51,17 @@ END //
 DELIMITER 
 
 DELIMITER //
+CREATE PROCEDURE imprimirZombieOrdenado(
+)
+BEGIN
+    SELECT Z.Nombre, E.Estado, H.FechaHora
+    FROM Zombie as Z, Estado as E, Historial as H
+    WHERE Z.ZombID = H.ZombID AND E.EstID = H.EstID
+    ORDER BY H.FechaHora DESC, Z.Nombre ASC;
+END //
+DELIMITER 
+
+DELIMITER //
 CREATE PROCEDURE nuevoZombie(
 IN uNombre VARCHAR(50),
 IN uEstado VARCHAR(50)
@@ -64,7 +75,7 @@ DELIMITER ;
 -- VISTAS
 
 CREATE VIEW ZombisPorEstado AS 
-	SELECT Estado, COUNT(EstID) AS Total
+	SELECT Estado, COUNT(H.EstID) AS Total
 	FROM Estado AS E, Historial AS H
-    WHERE E.EstID = H
+    WHERE E.EstID = H.EstID
 	GROUP BY Estado;

@@ -12,7 +12,7 @@ function connectDB() {
     $servername = "mysql1008.mochahost.com";
     $username = "dawbdorg_0570654";
     $password = "0570654";
-    $dbname = " dawbdorg_A00570654";
+    $dbname = "dawbdorg_A00570654";
     
     
     $environment = "DEV";
