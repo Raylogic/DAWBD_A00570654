@@ -1,0 +1,42 @@
+<br>
+<section>
+    <div class="col s11 m11 l11">
+        <a href="Inicio.php"class="waves-effect waves-light btn-large right-align Regresar"><i class="material-icons right">arrow_back</i>Regresar a Zombis</a>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h1 class="center-align">Registrar Zombi</h1>
+    </div>
+</section>
+<br><br>
+<section>
+    <div class="container">
+        <form class="col s12" method=POST action="Zombie_Insertar.php">
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input id="Nombre" type="text" name="Nombre" class="validate" placeholder="Raymundo Romero Arenas" maxlength="50" pattern="[A-Za-zÑáéíóúÁÉÍÓÚ\s]+" required title="Sólo puedes insertar caracteres">
+                    <label for="Nombre">Nombre</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <label>Seleccionar estado</label>
+                    <br><br>
+                    <select id="Estado" name="Estado">
+                        <option value="" disabled selected>¿Cuál es el estado del zombi?</option>
+                        <option class="drop-link" value="1">Infectado</option>
+                        <option class="drop-link" value="2">Desorientado</option>
+                        <option class="drop-link" value="3">Violento</option>
+                        <option class="drop-link" value="4">Desmayado</option>
+                        <option class="drop-link" value="5">Transformado</option>
+                    </select>
+                </div>
+            </div>
+            <div class="container center-align">
+               <button class="btn waves-effect waves-light center-align loginButton" type="submit" name="login" id="Registrar">Registrar<i class="fas fa-tint loginIcon"></i></button>
+            </div>
+        </form>
+    </div>
+</section>
+<br><br>

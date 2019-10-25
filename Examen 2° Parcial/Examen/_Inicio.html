@@ -1,0 +1,43 @@
+<div class="container">
+
+    <h3 class="center-align">Lista de Zombis</h3>
+
+    <a href="Zombie_Registro.php" class="right btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+
+    <section>
+    <div class="container-fluid center-align">
+        <div class="row">
+            <div class="col s12 m6 l2"></div>  
+            <div class="col s12 m6 l8">
+                <div class="col s12 m6 l1"></div>
+                <div class="col s12 m6 l10 offset-s2">  
+                    <div class="input-field">
+                        <label>Seleccionar estado</label>
+                        <br><br>
+                        <select id="Estado" onclick="sendRequest()">
+                            <option value="" disabled selected>¿Cuál es el estado del zombi?</option>
+                            <option class="drop-link" value="Infectado">Infectado</option>
+                            <option class="drop-link" value="Desorientado">Desorientado</option>
+                            <option class="drop-link" value="Violento">Violento</option>
+                            <option class="drop-link" value="Desmayado">Desmayado</option>
+                            <option class="drop-link" value="Transformado">Transformado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col s12 m6 l1"></div>
+            </div>
+            <div class="col s12 m6 l2"></div>
+        </div>
+    </div>
+    </section>
+
+    <section class="container-fluid">
+    <div class="row">
+        <div class="col s12 m12 l12" id="Filtro">
+            <?php if(!isset($GET_["q"])): ?>
+                <?php echo print_zombis()?>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+</div>
