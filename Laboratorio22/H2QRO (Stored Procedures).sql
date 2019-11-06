@@ -26,7 +26,7 @@ IN uAPaterno varchar(50),
 IN uAMaterno varchar(50)
 )
 BEGIN
-    UPDATE usuario SET Mail=uMail, Contraseña=uContraseña, Nombre=uNombre, APaterno=uAPaterno, AMaterno=uAMaterno WHERE Mail=uMail;
+    UPDATE usuario SET Contraseña=uContraseña, Nombre=uNombre, APaterno=uAPaterno, AMaterno=uAMaterno WHERE Mail=uMail;
 END //
 DELIMITER ;
 
@@ -47,10 +47,10 @@ DELIMITER ;
 DROP PROCEDURE IF EXISTS eliminarAdministrador;
 DELIMITER //
 CREATE PROCEDURE eliminarAdministrador(
-IN uMail varchar(100)
+IN uUsuarioID INT(11)
 )
 BEGIN
-    DELETE FROM usuario WHERE Mail=uMail;
+    DELETE FROM usuario WHERE UsuarioID=uUsuarioID;
 END //
 DELIMITER ;
 
