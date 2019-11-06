@@ -1,0 +1,81 @@
+<br>
+<div class="container">
+    <form class="col s12" method=POST action="Administrador_Insertar.php">
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="Nombre" type="text" name="Nombre" class="validate" placeholder="César" maxlength="50" pattern="[A-Za-zÑáéíóúÁÉÍÓÚ\s]+" required title="Sólo puedes insertar caracteres" autofocus>
+                <label for="Nombre">Nombre</label>
+            </div>
+        </div>
+
+        <!-- El usuario se puede desplazar entre inputs mediante el Tab para evitar usar mouse -->
+        <!-- El autofocus permite seleccionar el input de forma automática al cargar una página -->
+        <!-- Se cambió el color de los labels y placeholders de #d1d1d1 a #545454 para aumentar su visibilidad 
+        ::-webkit-input-placeholder {
+          color: #545454;
+        }
+        ::-moz-placeholder {
+          color: #545454;
+        }
+        :-ms-input-placeholder {
+          color: #545454;
+        }
+        ::-ms-input-placeholder {
+          color: #545454;
+        }
+        ::placeholder {
+          color: #545454;
+        }
+        .input-field > label {
+          color: #545454;
+        }
+        -->
+
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="Paterno" type="text" name="Paterno" class="validate" placeholder="Valverde" maxlength="50" pattern="[A-Za-zÑáéíóúÁÉÍÓÚ\s]+" required title="Sólo puedes insertar caracteres"> 
+                <label for="Paterno">Apellido Paterno</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="Materno" type="text" name="Materno" class="validate" placeholder="Baquedano" maxlength="50" pattern="[A-Za-zÑáéíóúÁÉÍÓÚ\s]+" required title="Sólo puedes insertar caracteres">
+                <label for="Materno">Apellido Materno</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="Mail" type="email" name="Mail" class="validate" placeholder="ejemplo.H2QRO@gmail.com" maxlength="100" required>
+                <label for="Mail">Mail</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="Contraseña" type="password" name="Contraseña" class="validate form-control" placeholder="H2QRO*2019" pattern="(?=^.{8,15}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required title="La contraseña debe tener 8-15 caracteres y contener letras, números, caracteres especiales y mayúsculas" onkeyup="validarContraseña()">
+                <label for="Contraseña">Contraseña</label>
+                <small id="AyudaContrasena" class="form-text text-muted">
+                    La contraseña debe tener 8-15 caracteres y contener letras, números, especiales y mayúsculas.
+                </small>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="Validacion" type="password" name="Validacion" class="validate form-control" placeholder="H2QRO*2019" pattern="(?=^.{8,15}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required title="La contraseña debe tener 8-15 caracteres y contener letras, números, caracteres especiales y mayúsculas" onkeyup="validarContraseña()">
+                <label for="Validacion">Validar contraseña</label>
+                <small id="AyudaValidacion" class="form-text text-muted">
+                    La contraseña debe tener 8-15 caracteres y contener letras, números y caracteres especiales.
+                </small>
+            </div>
+        </div>
+        <br>
+        <div class="container center-align">
+           <button class="btn waves-effect waves-light center-align loginButton" type="submit" name="login" id="Registrar" disabled="true">Registrar<i class="fas fa-tint loginIcon"></i></button>
+        </div>
+        <br>
+    </form>
+</div>
+<br>

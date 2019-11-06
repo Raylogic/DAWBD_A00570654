@@ -1,0 +1,46 @@
+<br>
+<div class="container">
+    <form class="col s12" method=POST action="Voluntario_Insertar.php">
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="Nombre" type="text" name="Nombre" class="validate" placeholder="Raymundo" maxlength="50" pattern="[A-Za-zÑáéíóúÁÉÍÓÚ\s]+" required title="Sólo puedes insertar caracteres" autofocus>
+                <label for="Nombre">Nombre</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="Apellidos" type="text" name="Apellidos" class="validate" placeholder="Romero" maxlength="100" pattern="[A-Za-zÑáéíóúÁÉÍÓÚ\s]+" required title="Sólo puedes insertar caracteres">
+                <label for="Apellidos">Apellidos</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="Mail" type="email" name="Mail" class="validate" placeholder="ray.romero.arenas@gmail.com" maxlength="100"required>
+                <label for="Mail">Mail</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="Telefono" type="text" name="Telefono" class="validate" pattern="[0-9]+" minlength="10" maxlength="10" placeholder="4775570629" maxlength='10' required title="Sólo puedes insertar números">
+                <label for="Telefono">Teléfono</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="Edad" type="number" name="Edad" class="validate" min="1" max="100" placeholder="20" required title="Sólo puedes insertar caracteres">
+                <label for="Edad">Edad</label>
+            </div>
+        </div>
+        <br>
+        <div class="container center-align">
+            <button class="btn waves-effect waves-light center-align loginButton" type="submit" name="login">Registrar<i class="fas fa-tint loginIcon"></i></button>
+        </div>
+        <br>
+    </form>
+</div>
+
+<!-- Los HTMLs de registro de datos siguen una heurìstica y diseño para asegurar la consistencia de la página -->
